@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Connexion</title>
+  <link rel="stylesheet" href="connexion.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="connexion_main">
+		<h1> Ouvrir une session </h1>
+		<form action = "javascript:(fonction(){return;})()" method = "post" onsubmit="return validateForm(this)"/>
+			<div class = "ids">
+				<label style='padding-right:37px'> Login: </label>
+				<input type="text" placeholder='login' name="login"  style='margin-left:10px' />
+			</div>  
+			<div class = "ids">
+				<label> Mot de passe: </label>
+					<input type="text" name="password" placeholder='password' />
+			</div>
+			<div class = "connex">
+			 <div class = "buttons">
+				<input type="submit" value="connexion"  />
+			 </div>
+			 <div class = "links">
+				<a id = "link1" href="https://www.w3schools.com"> Mot de passe perdu </a><br/>
+				<a id = "link2" href="Enregistrement.html" > Pas encore inscrit? </a>
+			 </div>
+			</div>
+		</form>
+	</div>
+	<script>
+      function validateForm(form) {
+		 $("#msg_err_connexion").remove(); 
+         var login=form.login.value;
+         var pass=form.password.value;
+         var OK=verif_formulaire_connexion(login,pass);
+         if(OK){
+			 connecte(login,pass);
+		 }
+      }
+      function verif_formulaire_connexion(l,p){
+		  if(l.length==0){
+			  func_erreur("Login obligatoire");
+			  return false;
+		  }
+		  if(p.length==0){
+			  func_erreur("Password obligatoire");
+			  return false; 
+		  }
+		  return ;
+	  }
+	  function func_erreur(msg){
+		  var msg_box="<div id=\"msg_err_connexion\">"+msg+"</div>";
+		  			 
+		  var old_msg=$("#msg_err_connexion");
+		  if(old_msg.length==0){
+			  $("form").prepend(msg_box);
+			  $("#msg_err_connexion").css({"color":"red","margin-top":"10px"});
+		  }
+		  else{
+			  old_msg.replaceWith(msg_box);
+			  $("#msg_err_connexion").css({"color":"red","margin-top":"10px"});
+		  }
+	  }
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Page principale</title>
+   <link rel="stylesheet" href="pagePricipale.css">
+</head>
+<body >
+<nav class="menu" id="menu">
+  <div class="menu_bar">
+	<span onclick="closeSidebar()" class="x">X</span>
+	<br>
+	<div class="avatar">
+		<img class="avatar_img" src="avatar.jpg" alt="avatar" style="width:75%">
+	</div>
+  </div>
+  <ul>
+	<li><a href="javascript:MyFunction();" >Deconnexion</a></li>
+  </ul>
+</nav>
+<header >
+  <button class="btn_menu" onclick="openSidebar()">&#9776;</button>
+  <div class="zone_rech">
+		<input type="search" id="search" name="search" placeholder="Recherche..."></input>	
+  </div>
+  <div class="logo">
+       <img class="logo_img" src="Twitter_Bird.png" alt="bird">
+  </div>
+</header>
+<hr>
+  <article class="middle">
+	<div>
+		
+	</div> 
+	<div  tabindex="-1" class="nv_msg" id="nv_msg">
+		<textarea id="subject" name="subject" placeholder="Write something..." ></textarea>-
+		<button class="post" onclick="#">Tweet</button>
+		<button type="button" class="ajout_msg">
+				<span>+</span>
+         </button>
+	</div> 
+	<div id="liste_messages">
+		
+	</div>  
+  </article>
+  <aside class="right">
+	 Suggestions d'amis
+  </aside> 
+  <aside class="left">
+	 
+  </aside>
+
+
+
+
+
+
+
+<script>
+closeSidebar();
+function openSidebar() {
+    document.getElementById("menu").style.display = "block";
+}
+function closeSidebar() {
+    document.getElementById("menu").style.display = "none";
+}
+function resize(id1,id2){
+	document.getElementById(id1).style.height="200px";
+	document.getElementById(id2).style.height="100px";
+}
+function MyFunction() {
+	alert('gt');
+}
+</script>
+</body>
+</html>	

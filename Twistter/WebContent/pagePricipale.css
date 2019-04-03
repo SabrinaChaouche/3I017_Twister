@@ -1,0 +1,185 @@
+body{
+background-color:#d1e0e0;
+font-family:"Myriad Pro", Helvetica,sans-serif;
+font-size:1em;
+}
+header{
+margin-top:-0.3%;
+background-color:#ffffff;
+height:50px;
+}
+div.logo{
+position:relative;
+width:15px;
+height:15px;
+}
+img.logo_img{
+position:absolute;
+height:30px;
+width:30px;
+margin-left:3800%;
+}
+.btn_menu,.zone_rech,.logo{
+display: inline-block;
+}
+.btn_srch{
+background:url(http://www.larevuedekenza.fr/wp-content/themes/quarter/images/sidebar/loupe.png) no-repeat 0 0;width: 30px;height: 28px; }
+#search,.btn_srch{
+display: inline-block;
+}
+.zone_rech{
+margin-left:40%;
+width:100px;
+}
+#search{
+outline:none;
+padding:5px;
+border-radius:20px;
+border:3px solid #248f8f;
+width:30px;
+height:40px;
+padding-left:20px;
+background: url(http://www.larevuedekenza.fr/wp-content/themes/quarter/images/sidebar/loupe.png) no-repeat right;
+transition:width 2s;
+-webkit-transition:width 2s;
+-moz-transition:width 2s;
+-o-transition:width 2s;
+-ms-transition:width 2s;
+}
+#search:focus{
+width:200px;
+}
+.btn_menu{
+outline:none;
+border-radius:10px;
+ margin-left:5%;
+ background-color: #1affd1;
+ width:40px;
+ height:30px;
+ }
+ hr{
+    display: block;
+    margin-top: 0%;
+    border-width: 2px;
+ }
+.menu{
+background-color: #e6fffa;
+position:absolute;
+  margin-top:2.7%; 
+}
+.avatar{
+margin-left:0%;
+width:40px;
+height:10px;
+}
+.x{
+cursor:pointer;
+color:red;font-weight:bold;
+margin-left:90%;
+}
+ul {
+    list-style-type: none;
+    margin-top: 10%;
+    padding: 0;
+    width: 200px;
+    background-color: #00ffbf;
+}
+
+li a {
+    display: block;
+    color:  #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #009973;
+    color: white;
+}
+.middle{
+margin-left:38%;
+border-radius:10px;
+width:30%;
+background-color: #ffffff
+}
+.nv_msg{
+border-radius: 20px;
+margin-top:0%;
+background-color:  #ccf5ff;
+width:25%;
+height:10%;
+position:absolute;
+}
+#subject{
+border-radius: 20px;
+margin-left:10%;
+margin-top:5%;
+position:relative;
+ outline: none;
+ text-align: center;
+ width:80%;
+}
+.post{
+outline:none;
+ margin-left:5%;
+ height:30px;
+  cursor: pointer;
+  text-align: center;
+  color: #ccffff;
+  background-color: #33cccc;
+  border: none;
+  border-radius: 40px;
+  width:100px;
+  margin-top:0%;
+  position:absolute;
+  margin-left:80%;
+}
+#subject,.post{
+display:block;
+}
+.right{
+border-radius:10px;
+width:20%;
+height:500px;
+position:relative;
+margin-left:70%;
+background-color: #ffffff;
+}
+.left{
+border-radius:10px;
+width:20%;
+height:500px;
+position:absolute;
+margin-left:-75%;
+background-color: #ffffff;
+margin-top:0%;
+cursor: pointer;
+}
+.left,.right{
+display: inline-block;
+}
+.ajout_msg{
+cursor:pointer;
+position:relative;
+color: #009999;
+text-align: center;
+background-color: #ffffff;
+border-color:#33cccc;
+outline:none;
+border-radius:100%;
+width:30px;
+height:30px;
+margin-bottom:60%;
+margin-left:40%;
+}
+.ajout_msg:hover {background-color: #ccf5ff;}
+.ajout_msg,.post{
+display: inline-block;
+}
+#subject:focus{
+height:150px;
+}
+.nv_msg:hover{
+height:20%;
+}

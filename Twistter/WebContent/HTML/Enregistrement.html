@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>S'enregistrer</title>
+  <link rel="stylesheet" href="Enregistrement.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body >
+ <form class="modal-content" id="enregistre" action = "javascript:(fonction(){return;})()" method = "post" onsubmit="return validateForm(this)">
+    <div class="container">
+      <h1>Enregistrement</h1>
+      <p>Rejoignez Twister aujourd'hui en créant votre compte</p>
+      <hr>
+      <div class="nom_prenom">
+		<div class="nom">
+			<label for="nom"><b>Nom</b></label></br>
+            <input type="text" placeholder="Nom" name="nom" >
+		</div>  
+        <div class="prenom">
+		    <label for="prenom"><b>Prenom</b></label></br>
+            <input type="text" placeholder="Prenom" name="prenom" >
+        </div>
+	  </div>
+	  <div class="mdp">
+		<div class="login">
+            <label for="login"><b>Login:</b></label>
+            <input type="text" placeholder="Enter Login" name="login" >
+		</div>  
+		<div class="password">
+            <label for="psw"><b>Mot de passe:</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" >
+		</div>  
+        <div class="repeat">
+           <label for="psw_repeat"><b>Retapez:</b></label>
+           <input type="password" placeholder="Repeat Password" name="psw_repeat" >
+        </div>
+	  </div>
+      <div class="clear_fix">
+		 <div class="signupbtn">
+			 <input type="submit" value="Enregistrer"/>
+         </div>
+         <div class="cancelbtn">
+			 <input type="submit" value="Annuler"/>
+         </div>
+      </div>
+    </div>
+  </form>
+  <script>
+      function validateForm(form) {
+
+		 $("#msg_err_connexion").remove(); 
+		 var nom= form.nom.value;
+		 var prenom=form.prenom.value;
+         var login=form.login.value;
+         var pass1=form.psw.value;
+         var pass2=form.psw_repeat.value;
+         var OK=verif_formulaire_connexion(nom, prenom, login,pass1,pass2);
+
+         if(OK){
+			 connecte(login,pass1);
+		 }
+      }
+      
+      function verif_formulaire_connexion(nom,pren,l,p1,p2){
+		   if(nom.length==0){
+			  func_erreur("Nom obligatoire");
+			  return false;
+		  }
+		   if(pren.length==0){
+			  func_erreur("Prenom obligatoire");
+			  return false;
+		  }
+		  if(l.length==0){
+			  func_erreur("Login obligatoire");
+			  return false;
+		  }
+		  if(l.length>20){
+			  func_erreur("Bezzaf meqqar!");
+			  return false;
+		  }
+		  if(p1.length==0){
+			  func_erreur("Password obligatoire");
+			  return false; 
+		  }
+		   if(p2.length==0){
+			  func_erreur("Please, re-enter your password");
+			  return false; 
+		  }
+		   if(p1!=p2){
+			  func_erreur("The two passwords do not match each other");
+			  return false; 
+		  }
+	
+	
+		  return true;
+	  }
+	  function func_erreur(msg){
+		  var msg_box="<div id=\"msg_err_connexion\">"+msg+"</div>";
+		  var old_msg=$("#msg_err_connexion");
+		  if(old_msg.length==0){
+			  
+			  $(".mdp").append(msg_box);
+			  $("#msg_err_connexion").css({"color":"red","margin-top":"10px"});
+		  }
+		  else{
+			  old_msg.replaceWith(msg_box);
+			  $("#msg_err_connexion").css({"color":"red","margin-top":"10px"});
+		  }
+	  }
+	  function connecte(login,pass){
+		  alert(login);
+	  }
+</script>
+ </body>
+</html>
